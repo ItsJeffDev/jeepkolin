@@ -152,29 +152,33 @@
 
         /* Toggle button styles */
         .toggle-btn {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background-color: var(--secondary-bg-color);
-            color: var(--primary-text-color);
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--secondary-bg-color); /* Default color */
+    color: var(--primary-text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .toggle-btn:hover {
-            background-color: var(--secondary-text-color);
-        }
+/* Light mode button color */
+body:not(.dark-mode) .toggle-btn {
+    background-color: #202f26; /* Desired button color for light mode */
+    color: var(--dark-mode-text-color); /* Adjust text color if needed */
+}
 
-        .toggle-btn .icon {
-            font-size: 24px;
-        }
+/* Dark mode button styles */
+body.dark-mode .toggle-btn {
+    background-color: var(--dark-mode-accent-color);
+    color: var(--dark-mode-text-color);
+}
 
         /* Icon visibility for dark/light mode */
         body:not(.dark-mode) .icon-sun { display: block; }
@@ -364,7 +368,7 @@
     </div>
 
     <button class="toggle-btn" onclick="toggleDarkMode()">
-        <span class="icon icon-sun">&#9728;</span>
+        <span class="icon icon-sun">&#9728;</span> <!--&#9728;-->
         <span class="icon icon-moon">&#9790;</span>
     </button>
 
