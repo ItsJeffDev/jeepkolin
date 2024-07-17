@@ -8,6 +8,7 @@
     <title>Jeff Kolin Miranda</title>
     <style>
         :root {
+            /* Light mode colors */
             --primary-bg-color: #f5f5f5;
             --primary-text-color: #333;
             --secondary-bg-color: #f9f9f9;
@@ -15,6 +16,7 @@
             --link-color: #4CAF50;
             --dot-color: #4CAF50;
 
+            /* Dark mode colors */
             --dark-mode-bg-color: #202f26;
             --dark-mode-text-color: #f0f0f0;
             --dark-mode-wrapper-bg-color: #555;
@@ -66,18 +68,15 @@
             margin: 10px 0;
             font-size: 28px;
             font-weight: bold;
-            color: var(--primary-text-color);
         }
 
         .subtitle {
             margin: 5px 0;
             font-size: 20px;
-            color: var(--primary-text-color);
         }
 
         .right {
             padding: 20px;
-            color: var(--primary-text-color);
         }
 
         .bio {
@@ -87,13 +86,9 @@
             transition: color 0.3s ease;
         }
 
-        body:not(.dark-mode) .bio {
-            color: var(--primary-text-color);
-        }
-
-        body.dark-mode .bio {
-            color: var(--dark-mode-text-color);
-        }
+        /* Light and Dark mode styles */
+        body:not(.dark-mode) .bio { color: var(--primary-text-color); }
+        body.dark-mode .bio { color: var(--dark-mode-text-color); }
 
         .social-links {
             list-style-type: none;
@@ -115,6 +110,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Light mode link styles */
         body:not(.dark-mode) .social-links li a {
             color: var(--link-color);
         }
@@ -124,6 +120,7 @@
             color: #fff;
         }
 
+        /* Dark mode link styles */
         body.dark-mode .social-links li a {
             color: var(--dark-mode-accent-color);
             border-color: var(--dark-mode-accent-color);
@@ -134,6 +131,7 @@
             color: var(--dark-mode-text-color);
         }
 
+        /* Dark mode styles */
         body.dark-mode {
             background-color: var(--dark-mode-bg-color);
             color: var(--dark-mode-text-color);
@@ -152,6 +150,7 @@
             color: var(--dark-mode-text-color);
         }
 
+        /* Toggle button styles */
         .toggle-btn {
             position: fixed;
             right: 20px;
@@ -171,29 +170,19 @@
 
         .toggle-btn:hover {
             background-color: var(--secondary-text-color);
-            color: var(--primary-text-color);
         }
 
         .toggle-btn .icon {
             font-size: 24px;
         }
 
-        body:not(.dark-mode) .icon-sun {
-            display: block;
-        }
+        /* Icon visibility for dark/light mode */
+        body:not(.dark-mode) .icon-sun { display: block; }
+        body:not(.dark-mode) .icon-moon { display: none; }
+        body.dark-mode .icon-sun { display: none; }
+        body.dark-mode .icon-moon { display: block; }
 
-        body:not(.dark-mode) .icon-moon {
-            display: none;
-        }
-
-        body.dark-mode .icon-sun {
-            display: none;
-        }
-
-        body.dark-mode .icon-moon {
-            display: block;
-        }
-
+        /* About Me section */
         .about-me {
             margin-top: 20px;
             text-align: center;
@@ -219,6 +208,7 @@
             margin-top: 10px;
         }
 
+        /* Skills section */
         .skills {
             margin-top: 20px;
         }
@@ -261,15 +251,16 @@
             background-color: var(--dot-color);
         }
 
-        .python .dot:nth-child(1) { background-color: #FFD43B; }
-        .javascript .dot:nth-child(1) { background-color: #F7E02A; }
-        .css .dot:nth-child(1) { background-color: #1572B6; }
-        .html .dot:nth-child(1) { background-color: #E34F26; }
-        .csx .dot:nth-child(1) { background-color: #00599C; }
-        .sql .dot:nth-child(1) { background-color: #003B6F; }
-        .java .dot:nth-child(1) { background-color: #007396; }
-        .angular .dot:nth-child(1) { background-color: #DD0031; }
-        .aspnet .dot:nth-child(1) { background-color: #5C2D91; }
+        /* Skill colors */
+        .python .dot { background-color: #FFD43B; }
+        .javascript .dot { background-color: #F7E02A; }
+        .css .dot { background-color: #1572B6; }
+        .html .dot { background-color: #E34F26; }
+        .csx .dot { background-color: #00599C; }
+        .sql .dot { background-color: #003B6F; }
+        .java .dot { background-color: #007396; }
+        .angular .dot { background-color: #DD0031; }
+        .aspnet .dot { background-color: #5C2D91; }
     </style>
 </head>
 <body>
@@ -283,7 +274,9 @@
             <div class="about-me">
                 <h2>Aspire to be a software engineer.<br>From the Philippines.</h2>
             </div>
-            <p class="bio">Computer Programmer, Game Developer, Web Developer, Roblox Developer</p>
+            <p class="bio">
+                Computer Programmer, Game Developer, Web Developer, Roblox Developer
+            </p>
             <div class="skills">
                 <h3>My Skills</h3>
                 <ul>
@@ -375,6 +368,7 @@
     </button>
 
     <script>
+        // Toggle dark mode
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
